@@ -24,7 +24,7 @@ export default function RootLayout({
     <ClerkProvider appearance={{baseTheme: dark}}>
       <html lang="en" suppressHydrationWarning>
         <body className={`${geistMono.className} antialiased`}>
-          <ThemeProvider attribute="class" defaultTheme="dark">
+          <ThemeProvider attribute="class" defaultTheme="system">
             {children}
           </ThemeProvider>
         </body>
