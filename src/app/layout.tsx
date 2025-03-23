@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/app/components/theme-provider";
@@ -9,6 +9,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const grotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider appearance={{baseTheme: dark}}>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${geistMono.className} antialiased`}>
+        <body className={`${grotesque.className} antialiased`}>
           <ThemeProvider attribute="class" defaultTheme="system">
             {children}
           </ThemeProvider>
